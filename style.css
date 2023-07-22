@@ -8,8 +8,6 @@
     --grey: #bababa;
     --off-white: #faf8f7;
     --just-white: #fff;
-    --margin-center-table: calc(50% - (230px / 2));
-    --margin-center-plan: calc(50% - (190px / 2));
 }
 * {
     box-sizing: border-box;
@@ -19,7 +17,6 @@
 html{
     font-size: 62.5%;
     font-family: 'DM Sans', sans-serif;
-    scroll-behavior: smooth;
 }
 
 header {
@@ -131,63 +128,21 @@ main{
     line-height: 1.6rem;
     color: #757575;
 }
-.main-tables-container {
-    width: 100%;
-    height: 280px;
-  
-    display: flex;
-    justify-content: space-between;
-  
-    overflow-x: scroll; /* Lo que sobresale hacerlo deslizable */
-    overscroll-behavior: contain; 
-    scroll-snap-type: x proximity; 
-    scroll-behavior: smooth; /* Transición suave */
-}
-.main-table {
+.main-currency-table {
     width: 70%;
     min-width: 235px;
     max-width: 500px;
     height: 360px;
     margin: 0 auto;
-    scroll-snap-align: center;
 }
-#currency-table {
-    padding-left: var(--margin-center-table);
-    margin-right: calc(var(--margin-center-table) / 2);
-}
-#commissions-table {
-    padding-right: var(--margin-center-table);
-    margin-left: calc(var(--margin-center-table) / 2);
-}
-
-.main-tables-container .right-arrow, .left-arrow {
-    width: 12px;
-    height: 12px;
-  
-    position: absolute;
-    margin: calc(calc(237.5px/2) - 12px) 0;
-    right: 31px;
-  
-    background-image: url("https://gist.githack.com/CabosManuel/7a56bc251eafbbcbac0a78a106a2630d/raw/b8fe714481549af687447ad811847c3f1d3a2db1/right-arrow.svg");
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-.main-table .currency-table--title {
+.main-currency-table .currency-table--title {
     margin-bottom: 15px;
     font-size: 1.8rem;
     font-weight: bold;
     line-height: 2.3rem;
     color: var(--bitcoin-orange);
 }
-
-.main-tables-container .left-arrow {
-    right: 0;
-    left: 31px;
-    transform: rotate(180deg);
-  }
-  
-.table--container {
+.currency-table--container {
     width: 90%;
     min-width: 230px;
     max-width: 300px;
@@ -196,11 +151,11 @@ main{
     font-family: 'Inter', sans-serif;
 
 }
-.table--container table{
+.currency-table--container table{
     width: 100%;
     height: 100%;
 }
-.table--container td {
+.currency-table--container td {
     width: 50%;
     font-size: 1.6rem;
     font-weight: 500;
@@ -208,25 +163,32 @@ main{
     color: var(--grey);
     background-color: var(--just-white);
 }
-.table--container .table__top-left {
+.currency-table--container .table__top-left {
     border-radius: 15px 0 0 0 ;
 }
-.table--container .table__top-right {
+.currency-table--container .table__top-right {
     border-radius: 0 15px 0 0 ;
 }
-.table--container .table__bottom-right {
+.currency-table--container .table__bottom-right {
     border-radius: 0 0 15px 0;
 }
-.table--container .table__bottom-left {
+.currency-table--container .table__bottom-left {
     border-radius: 0 0 0  15px;
 }
-.table--container .table__right {
+.currency-table--container .table__right {
     font-size: 1.4rem;
     font-weight: normal;
     line-height: 1.7rem;
     color: #757575;
 }
-.table--container .currency-down-icon {
+.currency-table--container .currency-down-icon {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    background-image: url('./assets/icons/trending-down.svg');
+}
+.currency-table--container .currency-down-icon {
     display: inline-block;
     width: 15px;
     height: 15px;
@@ -236,7 +198,7 @@ main{
     background-position: center;
     background-repeat: no-repeat;
 } 
-.table--container .currency-up-icon {
+.currency-table--container .currency-up-icon {
     display: inline-block;
     width: 15px;
     height: 15px;
@@ -246,31 +208,17 @@ main{
     background-position: center;
     background-repeat: no-repeat;
 } 
-.table--date {
+.currency-table--date {
     width: 240px;
     height: 30px;
     margin: 0 auto;
     margin-top: 20px;
     padding: 8px;
+    background-color: var(--soft-orange);
     border-radius: 8px;
 }
-.currency-table-date{
-    background-color: var(--soft-orange);
-}
-.table--date p {
+.currency-table--date p {
     font-size: 1.2rem;
     line-height: 1.5rem;
     color: var(--warm-black);
-}
-
-/* comissions */
-.main-table .commissions-table--title {
-    margin-bottom: 15px;
-    font-size: 1.8rem;
-    font-weight: bold;
-    line-height: 2.3rem;
-    color: var(--secondary-blue);
-}
-.commissions-table-date{
-    background-color: var(--soft-blue);
 }
