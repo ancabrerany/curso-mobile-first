@@ -128,12 +128,21 @@ main{
     line-height: 1.6rem;
     color: #757575;
 }
+.main-tables-container {
+    display: flex;
+    height: 370px;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+}
 .main-table {
-    width: 70%;
+    position: relative;
+    scroll-snap-align: center;
+    width: 100%;
     min-width: 235px;
     max-width: 500px;
     height: 360px;
-    margin: 0 auto;
+    margin: auto 25px;
 }
 .main-table .currency-table--title {
     margin-bottom: 15px;
@@ -460,7 +469,7 @@ footer section {
 }
 footer .left ul {
     font-size: 1.4rem;
-    font-weight: 540;
+    font-weight: 545;
     line-height: 1.8rem;
     list-style: none;
 }
